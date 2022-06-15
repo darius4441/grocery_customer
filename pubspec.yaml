@@ -1,0 +1,31 @@
+name: grocery
+version: 1.0.0+1
+publish_to: none
+description: Grocery as Ecommerce
+environment: 
+  sdk: '>=2.17.0 <3.0.0'
+
+dependencies: 
+  cupertino_icons: ^1.0.2
+  cached_network_image: ^3.2.1
+  get_storage: ^2.0.3
+  google_fonts: ^3.0.1
+  shimmer: ^2.0.0
+  carousel_slider: ^4.1.1
+  firebase_core: ^1.17.0
+  firebase_auth: ^3.3.18
+  cloud_firestore: ^3.1.16
+  firebase_messaging: ^11.4.0
+  firebase_storage: ^10.2.17
+  get: 4.6.5
+  flutter: 
+    sdk: flutter
+
+dev_dependencies: 
+  flutter_lints: ^2.0.0
+  flutter_test: 
+    sdk: flutter
+
+flutter: 
+  uses-material-design: true
+
