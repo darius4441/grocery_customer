@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:grocery/presentation/home/components/brand_higligt.dart';
 
+import 'components/banner_widget.dart';
+import 'components/search_widget.dart';
 import 'controllers/home.controller.dart';
 
 class HomeScreen extends GetView<HomeController> {
@@ -8,40 +11,26 @@ class HomeScreen extends GetView<HomeController> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(
-          title: PreferredSize(
-            preferredSize: const Size.fromHeight(40),
-            child: AppBar(
-              elevation: 0,
-              centerTitle: true,
-              title: const Text("Grocery"),
-            ),
+      backgroundColor: Colors.blue.shade900,
+      appBar: AppBar(
+        title: PreferredSize(
+          preferredSize: const Size.fromHeight(40),
+          child: AppBar(
+            elevation: 0,
+            centerTitle: true,
+            title: const Text("Grocery"),
           ),
-          centerTitle: true,
         ),
-        body: ListView(
-          children: [
-            Column(
-              children: [
-                SizedBox(
-                  height: 55,
-                  child: Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: ClipRRect(
-                      borderRadius: BorderRadius.circular(4.0),
-                      child: const TextField(
-                        decoration: InputDecoration(
-                          filled: true,
-                          border: InputBorder.none,
-                          contentPadding: EdgeInsets.fromLTRB(8, 8, 8, 4),
-                        ),
-                      ),
-                    ),
-                  ),
-                ),
-              ],
-            )
-          ],
-        ));
+        centerTitle: true,
+      ),
+      body: ListView(
+        children: const [
+          SearchWidget(),
+          SizedBox(height: 10),
+          BannerWidget(),
+          BrandHiglight()
+        ],
+      ),
+    );
   }
 }
