@@ -1,19 +1,19 @@
 import 'package:dots_indicator/dots_indicator.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:grocery/presentation/home/controllers/home.controller.dart';
+import '../controllers/home.controller.dart';
 
 class BannerWidget extends StatelessWidget {
   const BannerWidget({
-    Key? key,
-  }) : super(key: key);
+    super.key,
+  });
 
   @override
   Widget build(BuildContext context) {
     final HomeController homeC = Get.put(HomeController());
 
     return Stack(
-      children: [
+      children: <Widget>[
         Padding(
           padding: const EdgeInsets.fromLTRB(8, 0, 8, 8),
           child: ClipRRect(
@@ -22,70 +22,27 @@ class BannerWidget extends StatelessWidget {
               height: 140,
               width: double.infinity,
               color: Colors.white,
-              child: PageView(
-                onPageChanged: ((value) =>
-                    homeC.scrollPosition.value = value.toDouble()),
-                children: const [
-                  Center(
-                    child: Text(
-                      "Page 1",
-                      style: TextStyle(
-                        fontSize: 30.0,
-                        fontWeight: FontWeight.w700,
-                      ),
-                    ),
-                  ),
-                  Center(
-                    child: Text(
-                      "Page 2",
-                      style: TextStyle(
-                        fontSize: 30.0,
-                        fontWeight: FontWeight.w700,
-                      ),
-                    ),
-                  ),
-                  Center(
-                    child: Text(
-                      "Page 3",
-                      style: TextStyle(
-                        fontSize: 30.0,
-                        fontWeight: FontWeight.w700,
-                      ),
-                    ),
-                  ),
-                  Center(
-                    child: Text(
-                      "Page 4",
-                      style: TextStyle(
-                        fontSize: 30.0,
-                        fontWeight: FontWeight.w700,
-                      ),
-                    ),
-                  ),
-                  Center(
-                    child: Text(
-                      "Page 5",
-                      style: TextStyle(
-                        fontSize: 30.0,
-                        fontWeight: FontWeight.w700,
-                      ),
-                    ),
-                  )
-                ],
-              ),
+              child: PageView.builder(
+                  itemCount: homeC.bannerImg.length,
+                  itemBuilder: (BuildContext context, int idx) {
+                    return Image.network(homeC.bannerImg[idx] as String);
+                  },
+                  onPageChanged: (int value) {
+                    homeC.bannerScrollPosition.value = value.toDouble();
+                  }),
             ),
           ),
         ),
         Positioned(
           bottom: 10.0,
           child: Row(
-            children: [
+            children: <Widget>[
               SizedBox(
                 width: Get.width,
                 child: Obx(
                   () => DotsIndicator(
                     dotsCount: 5,
-                    position: homeC.scrollPosition.value,
+                    position: homeC.bannerScrollPosition.value,
                     decorator: DotsDecorator(
                       spacing: const EdgeInsets.all(2.0),
                       activeSize: const Size(12, 6),

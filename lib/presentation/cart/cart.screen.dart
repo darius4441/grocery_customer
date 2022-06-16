@@ -5,15 +5,15 @@ import 'package:get/get.dart';
 import 'controllers/cart.controller.dart';
 
 class CartScreen extends GetView<CartController> {
-  const CartScreen({Key? key}) : super(key: key);
+  const CartScreen({super.key});
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('CartScreen'),
+        title: const Text('CartScreen'),
         centerTitle: true,
       ),
-      body: Center(
+      body: const Center(
         child: Text(
           'CartScreen is working',
           style: TextStyle(fontSize: 20),

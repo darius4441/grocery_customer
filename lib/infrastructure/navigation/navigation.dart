@@ -1,3 +1,5 @@
+// ignore_for_file: strict_raw_type, avoid_classes_with_only_static_members, always_specify_types
+
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
@@ -8,11 +10,11 @@ import 'bindings/controllers/controllers_bindings.dart';
 import 'routes.dart';
 
 class EnvironmentsBadge extends StatelessWidget {
+  const EnvironmentsBadge({super.key, required this.child});
   final Widget child;
-  const EnvironmentsBadge({Key? key, required this.child}) : super(key: key);
   @override
   Widget build(BuildContext context) {
-    var env = ConfigEnvironments.getEnvironments()['env'];
+    final String? env = ConfigEnvironments.getEnvironments()['env'];
     return env != Environments.PRODUCTION
         ? Banner(
             location: BannerLocation.topStart,

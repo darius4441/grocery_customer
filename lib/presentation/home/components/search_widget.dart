@@ -3,13 +3,13 @@ import 'package:iconly/iconly.dart';
 
 class SearchWidget extends StatelessWidget {
   const SearchWidget({
-    Key? key,
-  }) : super(key: key);
+    super.key,
+  });
 
   @override
   Widget build(BuildContext context) {
     return Column(
-      children: [
+      children: <Widget>[
         SizedBox(
           height: 55,
           child: Padding(
@@ -21,7 +21,7 @@ class SearchWidget extends StatelessWidget {
                   filled: true,
                   border: InputBorder.none,
                   fillColor: Colors.white,
-                  hintText: "Chercher un produit ...",
+                  hintText: 'Chercher un produit ...',
                   hintStyle: TextStyle(color: Colors.grey),
                   contentPadding: EdgeInsets.fromLTRB(8, 5, 8, 0),
                   prefixIcon: Icon(
@@ -39,42 +39,42 @@ class SearchWidget extends StatelessWidget {
           width: double.infinity,
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
-            children: [
+            children: <Widget>[
               Row(
-                children: const [
+                children: const <Widget>[
                   Icon(
                     IconlyLight.info_square,
                     size: 12.0,
                     color: Colors.white,
                   ),
                   Text(
-                    "100% Coton",
+                    '100% Coton',
                     style: TextStyle(color: Colors.white, fontSize: 12.0),
                   )
                 ],
               ),
               Row(
-                children: const [
+                children: const <Widget>[
                   Icon(
                     IconlyLight.info_square,
                     size: 12.0,
                     color: Colors.white,
                   ),
                   Text(
-                    "4 - 7 Retour",
+                    '4 - 7 Retour',
                     style: TextStyle(color: Colors.white, fontSize: 12.0),
                   )
                 ],
               ),
               Row(
-                children: const [
+                children: const <Widget>[
                   Icon(
                     IconlyLight.info_square,
                     size: 12.0,
                     color: Colors.white,
                   ),
                   Text(
-                    "Vrai Marques",
+                    'Vrai Marques',
                     style: TextStyle(color: Colors.white, fontSize: 12.0),
                   )
                 ],

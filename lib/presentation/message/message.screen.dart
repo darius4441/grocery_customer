@@ -5,15 +5,15 @@ import 'package:get/get.dart';
 import 'controllers/message.controller.dart';
 
 class MessageScreen extends GetView<MessageController> {
-  const MessageScreen({Key? key}) : super(key: key);
+  const MessageScreen({super.key});
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('MessageScreen'),
+        title: const Text('MessageScreen'),
         centerTitle: true,
       ),
-      body: Center(
+      body: const Center(
         child: Text(
           'MessageScreen is working',
           style: TextStyle(fontSize: 20),

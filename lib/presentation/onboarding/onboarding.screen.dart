@@ -5,7 +5,7 @@ import '../../infrastructure/navigation/routes.dart';
 import 'controllers/onboarding.controller.dart';
 
 class OnboardingScreen extends GetView<OnboardingController> {
-  const OnboardingScreen({Key? key}) : super(key: key);
+  const OnboardingScreen({super.key});
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -16,7 +16,7 @@ class OnboardingScreen extends GetView<OnboardingController> {
               controller.setIsRead();
               Get.offAllNamed(Routes.MAIN);
             },
-            child: const Text("Home"),
+            child: const Text('Home'),
           ),
         ),
       ),

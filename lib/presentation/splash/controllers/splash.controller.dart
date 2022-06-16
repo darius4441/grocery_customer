@@ -2,11 +2,11 @@ import 'dart:async';
 
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
-import 'package:grocery/infrastructure/navigation/routes.dart';
+import '../../../infrastructure/navigation/routes.dart';
 
 class SplashController extends GetxController {
   final DateTime date = DateTime.now();
-  final _onboarding = GetStorage().read("onBoarding");
+  final bool? _onboarding = GetStorage().read('onBoarding');
 
   @override
   void onInit() {

@@ -4,7 +4,7 @@ import 'package:get/get.dart';
 import 'controllers/main.controller.dart';
 
 class MainScreen extends GetView<MainController> {
-  const MainScreen({Key? key}) : super(key: key);
+  const MainScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -19,19 +19,19 @@ class MainScreen extends GetView<MainController> {
           items: const <BottomNavigationBarItem>[
             BottomNavigationBarItem(
               icon: Icon(Icons.home),
-              label: "Accueil",
+              label: 'Accueil',
             ),
             BottomNavigationBarItem(
               icon: Icon(Icons.business),
-              label: "Catégore",
+              label: 'Catégore',
             ),
             BottomNavigationBarItem(
               icon: Icon(Icons.message),
-              label: "Message",
+              label: 'Message',
             ),
             BottomNavigationBarItem(
               icon: Icon(Icons.people),
-              label: "Mon compte",
+              label: 'Mon compte',
             ),
           ],
           currentIndex: controller.selectedIndex.value,

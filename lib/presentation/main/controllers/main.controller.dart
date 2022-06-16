@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:grocery/presentation/screens.dart';
+import '../../screens.dart';
 
 class MainController extends GetxController {
-  final selectedIndex = 0.obs;
+  final RxInt selectedIndex = 0.obs;
 
   static const TextStyle widgetsStyle = TextStyle(fontSize: 20);
 
